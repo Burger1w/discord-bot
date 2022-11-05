@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
     .format(" D [gün], H [saat], m [dakika], s [saniye]");
   const embed = new EmbedBuilder()
     .setAuthor({
-      name: "Polisler Geliyor",
+      name: `${message.author.tag}`,
       iconURL: client.user.avatarURL(),
     })
     .setTitle('Polisler Geliyor')

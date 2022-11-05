@@ -670,7 +670,7 @@ client.on('interactionCreate', async interaction => {
       const yardimMod = new EmbedBuilder()
           .setTitle(`Darex | Moderasyon`)
           .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
-          .setDescription('📗 .ban **Etiketlediğin Kişiyi Banlar**\n📗 .kick **Etiketlediğin Kişiyi Sunucudan Atar**\n📗 .forceban **İdsini Girdiğin Kişiyi Sunucudan Direk Banlar**')
+          .setDescription('📗 .ban **Etiketlediğin Kişiyi Banlar**\n📗 .kick **Etiketlediğin Kişiyi Sunucudan Atar**')
           .setThumbnail(client.user.displayAvatarURL())
           .setColor("Greyple")
       interaction.update({ embeds: [yardimMod] })
@@ -706,7 +706,7 @@ client.on('interactionCreate', async interaction => {
       const yardimKullanici = new EmbedBuilder()
           .setTitle(`Darex | Ayarlamalı`)
           .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
-          .setDescription('📙 .ticket-log **Ticket Sistemi Log Kanalını Ayarlar**\n📙 .ticket-yetkilisi **Ticket Sistemi Yetkilisini Gösterir**\n📙 .ticket-oluştur **Ticket Nerede Açılacak Kanala Gidip Bu Komutu Kullanabilirsiniz**\n📙 .buton-rol **Buton Rol Sistemini Ayarlar** \n📙 .menülü-rol **Menülü Rol Sistemini Ayarlar**\n📙 .başvuru-kanal **Başvuru Kanalını Ayarlar**\n📙 .başvuru-log **Başvurulduğunda Gönderilecek Kanal**\n📙 .başvuru-rol **Başvuru Kabul Edildğinde Verilecek Rolü Ayarlar**\n📙 .başvur **Başvuru Kanalına Gidip Komutu Kullanarak Formu Göndertebilirsiniz**')
+          .setDescription('📙 .ticket-log **Ticket Sistemi Log Kanalını Ayarlar**\n📙 .ticket-yetkilisi **Ticket Sistemi Yetkilisini Gösterir**\n📙 .ticket-oluştur **Ticket Nerede Açılacak Kanala Gidip Bu Komutu Kullanabilirsiniz**\n📙 .buton-rol **Buton Rol Sistemini Ayarlar** \n📙 .menülü-rol **Menülü Rol Sistemini Ayarlar**\n📙 .başvuru-kanal **Başvuru Kanalını Ayarlar**\n📙 .başvuru-log **Başvurulduğunda Gönderilecek Kanal**\n📙 .başvuru-rol **Başvuru Kabul Edildğinde Verilecek Rolü Ayarlar**\n📙 .başvur **Başvuru Kanalına Gidip Komutu Kullanarak Formu Göndertebilirsiniz**\n📙 .otorol **Otorol Sistemini Ayarlar**')
           .setThumbnail(client.user.displayAvatarURL())
           .setColor("Blue")
       interaction.update({ embeds: [yardimKullanici] })
@@ -808,3 +808,33 @@ I. Dünya Savaşı nihayete erdiğinde Mondros Ateşkes antlaşması imzalanmas�
 
 
 }})
+
+/////////////
+
+client.on('guildMemberAdd', async member => {
+const csdc = require("discord.js")
+const cdb = require("orio.db")
+let csd = cdb.get(`otorol.${member.guild.id}`)
+if(!csd) return;
+
+let rol = csd.rol
+let kanal = csd.log
+if(!rol) return
+const channel = member.guild.channels.cache.get(kanal)
+let role = member.guild.roles.cache.get(rol)
+if(!role) return
+
+const quunix = new csdc.EmbedBuilder() 
+.setTitle(member.user.tag)                      
+.setDescription(`${member.user.username}, Sunucuya <@&${rol}> rolü ile katıldı! Senin ile birlikte **${member.guild.memberCount}** Kişiyiz.`) 
+.setColor(csdc.Colors.Blue)
+.setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
+
+await member.roles.add(rol).catch(err => { 
+if(!channel) return
+return channel.send(`Yeterli yetkim bulunamadığı için rol veremiyorum. <@!${member.guild.ownerId}>`)
+})
+
+if(!channel) return
+return channel.send({embeds : [quunix]}).catch(err => {})
+})
