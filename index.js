@@ -37,7 +37,7 @@ module.exports = client;
 require("./events/message.js")
 require("./events/ready.js")
 
-client.login(config.token)
+client.login(process.env.token)
 
 client.on("ready", async () => {
   const moment = require("moment") 
@@ -541,64 +541,6 @@ client.on('interactionCreate', async interaction => {
                    } 
             }
        })
-       
-client.on("interactionCreate", async (interaction, message) => {
-  const dc = require("discord.js")
-  try {
-  if(!interaction.isSelectMenu()) return
-  
-  if(interaction.customId === "yardım") {
-    if (interaction.values[0] == "moderasyon") {
-    let message = interaction.message.id
-      const embed = new Discord.EmbedBuilder()
-      .setTitle("Godzilla - Moderasyon Sistemi!")
-      .setDescription(`${prefix}a\n${prefix}abone-rol\n${prefix}abone-yetkilisi\n${prefix}ban\n${prefix}buton-rol\n${prefix}hg-bb\n${prefix}kick\n${prefix}kullanıcı-bilgi\n${prefix}menü-rol\n${prefix}oto-rol\n${prefix}öneri-log\n${prefix}temizle\n${prefix}erkek-rol\n${prefix}kız-rol\n${prefix}public-hg-bb\n${prefix}kayıt-et\n${prefix}kayıtlı-rol\n${prefix}kayıtsız-rol\n${prefix}başvuru-kanal\n${prefix}başvuru-log\n${prefix}başvuru-rol`) 
-      .setColor("#ff0000")
- 
-  
-      interaction.channel.send({embeds: [embed]})
-      console.log("31")
-    }
-    if (interaction.values[0] == "kullanıcı") { 
-      await interaction.deferUpdate()
-      
-      const embed = new Discord.EmbedBuilder()
-    .setTitle("Godzilla - Kullanıcı Sistemi!")
-  .setDescription(`${prefix}avatar\n${prefix}emojiler\n${prefix}istatistik\n${prefix}lb\n${prefix}point\n${prefix}öner\n${prefix}ping\n${prefix}say\n${prefix}snake\n${prefix}snipe\n${prefix}sunucu\n${prefix}sunucu-bilgi\n${prefix}voice\n${prefix}yardım`)
-  .setColor("#ff0000")
-
-      await message.edit({embeds:[embed]})
-    
-    }
-    if (interaction.values[0] == "giveaway") {
-      await interaction.deferUpdate()
-      
-      const embed = new Discord.EmbedBuilder()
-    .setTitle("Godzilla - Çekiliş Sistemi!")
-  .setDescription(`${prefix}başlat\n${prefix}reroll\n${prefix}bitir`)
-  .setColor("#ff0000")
-
-      await message.edit({embeds:[embed]})
-    
-    }
-   
-    if (interaction.values[0] == "ticket") {
-    await interaction.deferUpdate()
-    
-    const embed = new Discord.EmbedBuilder()
-  .setTitle("Godzilla - Destek Sistemi!")
-.setDescription(`${prefix}ticket-oluştur\n${prefix}ticket-yetkilisi\n${prefix}ticket-log`)
-.setColor("#ff0000")
-
-    await message.edit({embeds:[embed]})
-  }
-  }
-  
-
-  } catch(e) {
-   
-  }
-})
 
 
 
@@ -607,7 +549,7 @@ client.on("interactionCreate", async (interaction, message) => {
 
 const modal2 = new ModalBuilder()
 .setCustomId('formaq')
-.setTitle('Godzilla - Başvuru Formu!')
+.setTitle('Başvuru Formu!')
 const a15 = new TextInputBuilder()
 .setCustomId('isim')
 .setLabel('İsminiz?')
@@ -717,27 +659,33 @@ interaction.guild.members.cache.get(uye).roles.add(rol)
 })
 
 
-client.on("interactionCreate", async (interaction) => {
-if (!interaction.isButton()) return;
-
-if (interaction.customId == "hayir") {
-interaction.deferUpdate()
-const data = await db.get(`basvuru_${interaction.message.id}`)
-if(!data) return;
-const uye = data;
-let log = db.fetch(`basvurukanal_${interaction.guild.id}`)
 
 
-client.channels.cache.get(log).send(`<@${uye}> Adlı Kullanıcının Başvurusu Red Edildi.`)
+client.on('interactionCreate', async interaction => {
+  if (!interaction.isSelectMenu()) return;
+  if (interaction.customId === "darex") {
 
-}
-})
+      if (interaction.values[0] == "moderation") {
 
-client.on("guildMemberAdd", async(member) => {
+      const yardimMod = new EmbedBuilder()
+          .setTitle(`Darex | Moderasyon`)
+          .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
+          .setDescription('')
+          .setThumbnail(client.user.displayAvatarURL())
+          .setColor("Greyple")
+      interaction.update({ embeds: [yardimMod] })
 
-const rol = db.fetch(`otorol_${member.guild.iḋ}`).rol
+  }
 
-member.roles.add(rol)
+  if (interaction.values[0] === "member") {
 
+      const yardimKullanici = new EmbedBuilder()
+          .setTitle(`Darex | Kullanıcı`)
+          .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
+          .setDescription('📕')
+          .setThumbnail(client.user.displayAvatarURL())
+          .setColor("Blue")
+      interaction.update({ embeds: [yardimKullanici] })
 
-});
+  }
+}})

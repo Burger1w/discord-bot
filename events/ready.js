@@ -4,7 +4,7 @@ const fs = require("fs")
 
 client.on("ready", () => {
 console.log(`${client.user.tag} Bot Online!`)
-client.user.setActivity(`Raven #2022`)
+client.user.setActivity(`Darex Her Xaman Gelişiyor`)
 
 client.commands = new Collection();
 client.aliases = new Collection();
