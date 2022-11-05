@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
  if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) return message.reply(`**Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.**`);
  let rol = message.mentions.roles.first()
  if (!rol) return message.channel.send("Bir rol etiketle!")
-  message.reply("ayarladım")
+  message.reply("Başarıyla Ayarladım")
   db.set(`kayıtlı_${message.guild.id}`, rol.id)
 
 

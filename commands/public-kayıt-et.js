@@ -28,7 +28,7 @@ if (!kayıtsız) return message.channel.send("Kayıtsız rolü ayarlanmamış!")
     .setCustomId("kız")
   )
   const embed = new EmbedBuilder()
-  .setTitle("Godzilla - Public Kayıt Sistemi!")
+  .setTitle("Public Kayıt Sistemi!")
   .setDescription("Kullanıcıyı nasıl kayıt etmek istiyorsun?")
   message.channel.send({embeds: [embed], components: [row]}).then(mesaj => {
     mesaj.createMessageComponentCollector(user => user.clicker.user.id == message.author.id).on('collect', async (button) => {

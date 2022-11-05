@@ -17,14 +17,16 @@ exports.run = async (client, message, args) => {
     .format(" D [gün], H [saat], m [dakika], s [saniye]");
   const embed = new EmbedBuilder()
     .setAuthor({
-      name: "Bot İstatistik",
+      name: "Polisler Geliyor",
       iconURL: client.user.avatarURL(),
     })
+    .setTitle('Polisler Geliyor')
     .setDescription(
-      `Polis`
+      `Polisler Geliyor Kaç!!`
     )
+    .setImage('https://tenor.com/view/cops-police-sirens-catching-crminals-what-you-gonna-do-gif-22472645')
     .setFooter({
-      text: `Bot İstatistik`,
+      text: `Polisler Geliyor`,
       iconURL: message.member.displayAvatarURL({ dynamic: true }),
     })
     .setColor(Colors.Blurple);

@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
   
 
     
-    message.reply("ayarlandı")
+    message.reply("Başarıyla Ayarlandı")
 
   db.set(`hgbb_${message.guild.id}`, hgbb.id)
   

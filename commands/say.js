@@ -9,10 +9,10 @@ exports.run = async (client, message, args) => {
 
    const embed = new EmbedBuilder()
    .setColor("#EB459E")
-   .setTitle(`${message.guild.name} | Infos`)
+   .setTitle(`${message.guild.name} | Bilgiler`)
    .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true })}`)
-   .setDescription(`Real Members: **${memberCount}**\nFake Members: **${fakeMemberCount}**\nBots: **${botCount}**\nAuthorized Members: **${permissionsMemberCount}** `) 
-   .setFooter({ text: `Asked by ${message.author.tag}.`, iconURL: `${message.author.displayAvatarURL({ dynamic: true })}` })    
+   .setDescription(`Gerçek Üyeler: **${memberCount}**\nSahte Üyeler: **${fakeMemberCount}**\nBotlar: **${botCount}**\nYetkili Üyeler: **${permissionsMemberCount}** `) 
+   .setFooter({ text: `Sorgulayan ${message.author.tag}.`, iconURL: `${message.author.displayAvatarURL({ dynamic: true })}` })    
    .setTimestamp()  
 
    return message.reply({ embeds: [embed] })
