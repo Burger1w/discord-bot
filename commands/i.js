@@ -21,21 +21,7 @@ exports.run = async (client, message, args) => {
       iconURL: client.user.avatarURL(),
     })
     .setDescription(
-      `
-  
-  📊 Toplam Kullanıcı: **${client.users.cache.size}**
-  📊 Toplam Sunucu: **${client.guilds.cache.size}**
-  📊 Toplam Kanal: **${client.channels.cache.size}**
-  
-  📊 Hafıza Kullanımı: **${(
-    process.memoryUsage().heapUsed /
-    1024 /
-    512
-  ).toFixed(2)}Mb**
-  📊 Uptime: **${Uptime}**
-  
-  📊 NodeJS Sürümü: **${process.version}**
-  📊 DiscordJS Sürümü: **${version}**`
+      `<:tr_takvim:1023137043959795712> **Yapım Tarihi:**\n12 Eylül 2020\n<:tr_ayarlar:1023136979438796882> **Uptime:**\n${Uptime}`
     )
     .setFooter({
       text: `Bot İstatistik`,
