@@ -682,7 +682,7 @@ client.on('interactionCreate', async interaction => {
       const yardimKullanici = new EmbedBuilder()
           .setTitle(`Darex | Kullanıcı`)
           .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
-          .setDescription('📕 .notal **Not Defterine Yazdığın Şeyi Kaydeder**\n📕 .notum **Not Defterine Kaydetiğin Mesajları Kaydeder**\n📕 .avatar **Etiketlediğin Yada Kendi Avatarını Gösterir**\n📕 .istatistik **Botun İstatistiğini Gösterir')
+          .setDescription('📕 .notal **Not Defterine Yazdığın Şeyi Kaydeder**\n📕 .notum **Not Defterine Kaydetiğin Mesajları Kaydeder**\n📕 .avatar **Etiketlediğin Yada Kendi Avatarını Gösterir**\n📕 .istatistik **Botun İstatistiğini Gösterir**\n📕 .atatürk **Atatürk Hakında Bilgi Verir**')
           .setThumbnail(client.user.displayAvatarURL())
           .setColor("Blue")
       interaction.update({ embeds: [yardimKullanici] })
@@ -724,4 +724,87 @@ client.on('interactionCreate', async interaction => {
       interaction.update({ embeds: [yardimKullanici] })
 
   }
+}})
+
+////////////////
+
+client.on('interactionCreate', async interaction => {
+  if (!interaction.isSelectMenu()) return;
+  if (interaction.customId === "atatürk") {
+
+      if (interaction.values[0] == "ilke") {
+
+      const yardimMod = new EmbedBuilder()
+          .setTitle(`Atatürk'ün İlkeleri`)
+          .setDescription(`Atatürk'ün ilkeleri 6 ilkeden oluşur. Bu ilkeler şu şekildedir;\n\nCumhuriyetçilik\nDevletçilik\nHalkçılık\nİnkılapçılık\nMilliyetçilik\nLaiklik`)
+           .setThumbnail('https://cdn.discordapp.com/attachments/1020381311975817237/1033296694135234630/asda.jpg')
+          .setColor("Purple")
+      interaction.update({ embeds: [yardimMod] })
+
+}
+
+      if (interaction.values[0] == "inkılap") {
+
+      const yardimMod = new EmbedBuilder()
+          .setTitle(`Atatürk'ün İnkılapları`)
+          .setDescription(`Atatürkün İnkılapları 5 kategoriden oluşur;\n\nSiyasi İnkılaplar\n\nSaltanatın kaldırılması (1922)\nAnkara'nın Başkent Olması (1923)\nCumhuriyetin İlanı (1923)\nHilâfetin kaldırılması (1924)\nKadınlara Seçme ve Seçilme Hakkının Tanınması (1930)\nAtatürk'ün Teşvikiyle Çok Partili Rejime Geçiş Denemesi (1930)\nLaikliğin Anayasaya Girmesi (1937)\n\nToplumsal İnkılaplar\n\nŞapka ve Kıyafet Devrimi (Şapka Kanunu) (1925)\nTekke, Zaviye ve Türbelerin Kapatılması (1925)\nMilletlerarası Takvim ve Saatin, Yeni Rakamların Kabulü ve Ölçülerde Değişiklik (1925)\nSoyadı Kanunu (1934)\nLâkap ve Unvanların Kaldırılması (1934)\n\nEğitim İnkılapları\n\nMillet Mektepleri'nin Açılması (1929)\nÖğretimin Birleştirilmesi (1924)\nMedreselerin Kapatılması (1924)\nMaarif Teşkilatı Hakkında Kanun (1926)\nHarf Devrimi'ne ilişkin kanunun kabulü (1928)\nGüzel Sanatlarda Yenilikler (1928)\nTürk Tarih Kurumu ve Türk Dil Kurumu'nun kurulması (1931)\nDil Devrimi'nin başlaması (1932)\nÜniversite Reformu (1933)\nÜniversite Öğreniminin Düzenlenmesi (1933)\n\nEkonomi İnkılapları\n\nİzmir İktisat Kongresi (1923)\nAşarın kaldırılması (1925)\nÇiftçinin Özendirilmesi (1925)\nÖrnek Çiftliklerin Kurulması (1925)\nTarım Kredi Kooperatifleri'nin Kurulması (1925)\nKabotaj Kanunu (1926)\nSanayi Teşvik Kanunu (1927)\nToprak reformu (1929)\nI ve II. Kalkınma Plânları (1933)\nYüksek Ziraat Enstitüsü'nün Kurulması (1933)\nTicaret ve Sanayi Odalarının Kurulması (1935)\n\nHukuk İnkılapları\n\nŞer'iyye Mahkemelerinin Kapatılması (1924)\nYeni Anayasanın Kabulü (1924)\nMecellenin Kaldırılması (1926)\nTürk Kanunu Medenisi (1926)\nTürk Ceza Kanunu (1926)`)
+          .setThumbnail('https://cdn.discordapp.com/attachments/1020381311975817237/1033296694135234630/asda.jpg')
+          .setColor("Purple")
+      interaction.update({ embeds: [yardimMod] })
+
+  }
+
+      if (interaction.values[0] == "hayatı") {
+
+      const yardimMod = new EmbedBuilder()
+          .setTitle(`Atatürk'ün Hayatı`)
+          .setDescription(`Mustafa Kemal Atatürk 1881 yılında Selanik’te doğdu. Ali Rıza Efendi babası, Zübeyde Hanım ise annesidir. Mustafa Kemal Atatürk’ün eğitim aldığı okullar baştan sona şöyledir; ilkokul eğitimini Mahalle Mektebinde ve Şemsi Efendi Okulunda, ortaokul eğitimini Selanik Mülkiye Rüştiyesi ve Selanik Askeri Rüştiyesinde, lise eğitimini Selanik Askeri İdadisi, üniversite eğitimini ise Harp Okulu ve Harp Akademisinde almıştır. 1893 yılında Askeri Rüştiye’de okurken matematik öğretmeni ona Kemal ismini verdi ve böylece ismi Mustafa Kemal oldu.
+I. Dünya Savaşı nihayete erdiğinde Mondros Ateşkes antlaşması imzalanması ile vatan topraklarını paylaşılacaktı. Fakat duruma el koyan Mustafa Kemal, 19 Mayıs 1919’da Samsun’a çıkarak milli mücadelenin temellerini attı.
+23 Nisan 1920 tarihinde TBMM’nin açılmasına önder olan Mustafa Kemal Meclis tarafından da Hükümet Başkanı seçildi. 5 Ağustos 1921’de yine Meclis tarafından Başkomutan seçildi. Sakarya Savaşı’nın kazanılmasındaki büyük emeklerinden dolayı Gazilik unvanı ve Mareşallik rütbesi ile şereflendirildi.
+29 Ekim 1923 tarihinde Cumhuriyet ilan edildi ve Mustafa Kemal Atatürk Türkiye Cumhuriyeti’nin ilk Cumhurbaşkanı koltuğuna oturdu. 1934 yılında Gazi Mustafa Kemal’e meclis “Atatürk” soyadını lâyık gördü.
+10 Kasım 1938 tarihinde Dolmabahçe Sarayı’nda hayatına veda etti. Tüm ülkeyi yasa boğdu. Ancak inkılapları ve ülkemize kazandırdıklarıyla kalbimizde sonsuzluğu ulaşmış bir liderdir.`)
+           .setThumbnail('https://cdn.discordapp.com/attachments/1020381311975817237/1033296694135234630/asda.jpg')
+          .setColor("Purple")
+      interaction.update({ embeds: [yardimMod] })
+
+}
+
+      if (interaction.values[0] == "andımız") {
+
+      const yardimMod = new EmbedBuilder()
+          .setTitle(`Andımız`)
+          .setDescription(`Türk'üm, doğruyum, çalışkanım,\nİlkem: küçüklerimi korumak, büyüklerimi saymak, yurdumu, milletimi özümden çok sevmektir.\nÜlküm: yükselmek, ileri gitmektir.\nEy Büyük Atatürk!\nAçtığın yolda, gösterdiğin hedefe durmadan yürüyeceğime ant içerim.\nVarlığım Türk varlığına armağan olsun.\nNe mutlu Türk'üm diyene!`)
+           .setThumbnail('https://cdn.discordapp.com/attachments/1020381311975817237/1033296694135234630/asda.jpg')
+          .setColor("Purple")
+      interaction.update({ embeds: [yardimMod] })
+
+}
+
+      if (interaction.values[0] == "istiklal") {
+
+      const yardimMod = new EmbedBuilder()
+          .setTitle(`İSTİKLAL MARŞI`)
+          .setDescription(`Korkma, sönmez bu şafaklarda yüzen al sancak;\nSönmeden yurdumun üstünde tüten en son ocak.\nO benim milletimin yıldızıdır, parlayacak;\nO benimdir, o benim milletimindir ancak.\n\nÇatma, kurban olayım çehreni ey nazlı hilâl!\nKahraman ırkıma bir gül… ne bu şiddet bu celâl?\nSana olmaz dökülen kanlarımız sonra helâl,\nHakkıdır, Hakk’a tapan, milletimin istiklâl.`)
+           .setThumbnail('https://cdn.discordapp.com/attachments/1020381311975817237/1033296694135234630/asda.jpg')
+          .setColor("Purple")
+      interaction.update({ embeds: [yardimMod] })
+
+}
+
+      if (interaction.values[0] == "anasayfa") {
+
+      const yardimMod = new EmbedBuilder()
+        .setTitle(`Atatürk`)
+        .setDescription("Atatürk'ün hayatını, yaptığı icraatleri ve daha fazlası için alttaki kategori seçiminden öğrenebilirsiniz.")
+        .setImage('https://cdn.discordapp.com/attachments/1020381311975817237/1033295379879440525/192730_ataturk.jpg')
+        .setThumbnail('https://cdn.discordapp.com/attachments/1020381311975817237/1033296694135234630/asda.jpg')
+          .setColor("Purple")
+      interaction.update({ embeds: [yardimMod] })
+
+}
+
+
+
+
+
 }})

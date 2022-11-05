@@ -36,5 +36,5 @@ exports.conf = {
   aliases: []
 };
 exports.help = {
-  name: "istatistik",
+  name: "polis-geliyor",
 };
