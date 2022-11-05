@@ -4,7 +4,7 @@ const config = require("../config.js")
 const prefix = config.prefix
 exports.run = async (client, message, args) => {
 	let tit = message.content.slice(prefix.length + 'ticket-oluştur'.length);
-	if(!tit.includes("+")) return message.reply("!ticket-oluştur Buton Yazısı + Embed Yazısı")
+	if(!tit.includes("+")) return message.reply(".ticket-oluştur Buton Yazısı + Embed Yazısı")
         let tit2 = tit.split('+');
  
 	
@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
 				.setCustomId("ticket")
 			)
 			const embed = new EmbedBuilder()
-			.setTitle("Godzilla - Destek Sistemi!")
+			.setTitle("Destek Sistemi!")
 			.setDescription(`${tit2[1]}`)
 			.setColor(0x0099ff)
 		

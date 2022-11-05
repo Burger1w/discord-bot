@@ -670,7 +670,7 @@ client.on('interactionCreate', async interaction => {
       const yardimMod = new EmbedBuilder()
           .setTitle(`Darex | Moderasyon`)
           .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
-          .setDescription('')
+          .setDescription('📗 .ban **Etiketlediğin Kişiyi Banlar**\n📗 .kick **Etiketlediğin Kişiyi Sunucudan Atar**\n📗 .forceban **İdsini Girdiğin Kişiyi Sunucudan Direk Banlar**')
           .setThumbnail(client.user.displayAvatarURL())
           .setColor("Greyple")
       interaction.update({ embeds: [yardimMod] })
@@ -682,7 +682,31 @@ client.on('interactionCreate', async interaction => {
       const yardimKullanici = new EmbedBuilder()
           .setTitle(`Darex | Kullanıcı`)
           .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
-          .setDescription('📕 .notal **Not Defterine Yazdığın Şeyi Kaydeder**\n📕 .notum **Not Defterine Kaydetiğin Mesajları Kay\n📕 .avatar\n📕 .i')
+          .setDescription('📕 .notal **Not Defterine Yazdığın Şeyi Kaydeder**\n📕 .notum **Not Defterine Kaydetiğin Mesajları Kaydeder**\n📕 .avatar **Etiketlediğin Yada Kendi Avatarını Gösterir**\n📕 .istatistik **Botun İstatistiğini Gösterir')
+          .setThumbnail(client.user.displayAvatarURL())
+          .setColor("Blue")
+      interaction.update({ embeds: [yardimKullanici] })
+
+  }
+
+  if (interaction.values[0] === "give") {
+
+      const yardimKullanici = new EmbedBuilder()
+          .setTitle(`Darex | Çekiliş`)
+          .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
+          .setDescription('📒 .başlat **Çekiliş Başlatır**\n📒 .bitir **Aktif Olan Çekilişi Bitirir**\n📒 .reroll **Çekilişin Kazanını Değiştirir**')
+          .setThumbnail(client.user.displayAvatarURL())
+          .setColor("Blue")
+      interaction.update({ embeds: [yardimKullanici] })
+
+  }
+
+  if (interaction.values[0] === "ayar") {
+
+      const yardimKullanici = new EmbedBuilder()
+          .setTitle(`Darex | Ayarlamalı`)
+          .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
+          .setDescription('📙 .ticket-log **Ticket Sistemi Log Kanalını Ayarlar**\n📙 .ticket-yetkilisi **Ticket Sis')
           .setThumbnail(client.user.displayAvatarURL())
           .setColor("Blue")
       interaction.update({ embeds: [yardimKullanici] })
