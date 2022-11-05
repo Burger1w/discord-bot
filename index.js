@@ -706,7 +706,19 @@ client.on('interactionCreate', async interaction => {
       const yardimKullanici = new EmbedBuilder()
           .setTitle(`Darex | Ayarlamalı`)
           .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
-          .setDescription('📙 .ticket-log **Ticket Sistemi Log Kanalını Ayarlar**\n📙 .ticket-yetkilisi **Ticket Sis')
+          .setDescription('📙 .ticket-log **Ticket Sistemi Log Kanalını Ayarlar**\n📙 .ticket-yetkilisi **Ticket Sistemi Yetkilisini Gösterir**\n📙 .ticket-oluştur **Ticket Nerede Açılacak Kanala Gidip Bu Komutu Kullanabilirsiniz**\n📙 .buton-rol **Buton Rol Sistemini Ayarlar** \n📙 .menülü-rol **Menülü Rol Sistemini Ayarlar**\n📙 .başvuru-kanal **Başvuru Kanalını Ayarlar**\n📙 .başvuru-log **Başvurulduğunda Gönderilecek Kanal**\n📙 .başvuru-rol **Başvuru Kabul Edildğinde Verilecek Rolü Ayarlar**\n📙 .başvur **Başvuru Kanalına Gidip Komutu Kullanarak Formu Göndertebilirsiniz**')
+          .setThumbnail(client.user.displayAvatarURL())
+          .setColor("Blue")
+      interaction.update({ embeds: [yardimKullanici] })
+
+  }
+
+  if (interaction.values[0] === "fun") {
+
+      const yardimKullanici = new EmbedBuilder()
+          .setTitle(`Darex | Eğlence`)
+          .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
+          .setDescription('📘 .snake **Yılan Oyunu Oynarsınız**\n📘 .polis-geliyor **Polis Geliyor Şakası**')
           .setThumbnail(client.user.displayAvatarURL())
           .setColor("Blue")
       interaction.update({ embeds: [yardimKullanici] })

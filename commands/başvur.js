@@ -11,7 +11,7 @@ if (!rol) return message.channel.send("Başvuru yetkili rolü ayarlanmamış!")
 let mesaj = args.slice(0).join(" ")
 if (!mesaj) return message.channel.send("Bir embed mesaj yazısı yaz!")
   const menu = new EmbedBuilder()
-  .setTitle("Godzilla - Başvuru Formu")
+  .setTitle("Başvuru Formu")
   .setDescription(`${mesaj}`)
   .setColor(0x0099FF)
 
