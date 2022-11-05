@@ -682,7 +682,7 @@ client.on('interactionCreate', async interaction => {
       const yardimKullanici = new EmbedBuilder()
           .setTitle(`Darex | Kullanıcı`)
           .setURL('https://discord.com/oauth2/authorize?client_id=754498131382763570&permissions=8&scope=bot')
-          .setDescription('📕')
+          .setDescription('📕 .notal **Not Defterine Yazdığın Mesajı Kaydeder**\n📕 .notum **Not Defterine Kaydetiğin Mesajlarını Gösterir**\n📕 .avatar **Etiketlediğin Yada Kendi Avatarını Gösterir**\n📕 .istatistik **Botun istatistiğini Gösterir**')
           .setThumbnail(client.user.displayAvatarURL())
           .setColor("Blue")
       interaction.update({ embeds: [yardimKullanici] })
